@@ -5,12 +5,9 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - checkout:
       - run: echo "Hello, World!"
-    steps:
-      - normal_message:
       - run: echo "This is a simple CircleCI configuration that prints 'Hello, World!' to the console."
- 
+    
   reply_message:
     docker:
       - image: cimg/base:stable

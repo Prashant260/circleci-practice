@@ -17,7 +17,7 @@ jobs:
 workflows:
   hello_world_workflow:
     jobs:
-      - hello_world: 
+      - hello_world
       - reply_message:
           requires:
             - hello_world

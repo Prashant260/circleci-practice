@@ -1,0 +1,26 @@
+version: 2.1
+
+jobs:
+  hello_world:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout:
+      - run: echo "Hello, World!"
+    steps:
+      - normal_message:
+      - run: echo "This is a simple CircleCI configuration that prints 'Hello, World!' to the console."
+ 
+  reply_message:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run: echo "Thank you for running the hello_world job!"
+
+workflows:
+  hello_world_workflow:
+    jobs:
+      - hello_world: 
+      - reply_message:
+          requires:
+            - hello_world
